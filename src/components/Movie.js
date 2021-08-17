@@ -17,10 +17,17 @@ class Movie extends React.Component {
   };
   render() {
 
-    let classList = this.state.numberOfLikes>=5 ? ' movie-popular' : ''
+    // let classList = this.state.numberOfLikes>=5 ? ' movie-popular' : ''
+
+    // inline styling
+    const styleObj = {
+      color: "darkblue",
+      backgroundColor: this.state.numberOfLikes >=5 ? 'azure' : 'white'
+    };
 
     return (
-      <section className={'movie ' + classList}>
+    //   <section className={'movie ' + classList}>
+      <section className='movie' style={styleObj}>
         <h5>{this.props.title}</h5>
         <p>Number of Likes: {this.state.numberOfLikes}</p>
         <button onClick={this.clickBtn}>Like it!</button>
