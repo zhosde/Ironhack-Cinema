@@ -26,14 +26,21 @@ class Movie extends React.Component {
     };
 
     return (
-    //   <section className={'movie ' + classList}>
-      <section className='movie' style={styleObj}>
-        <h5>{this.props.title} ({this.props.year})</h5>
-        <img src={this.props.imgURL} alt='movie image'/>
+      //   <section className={'movie ' + classList}>
+      <section className="movie" style={styleObj}>
+        <h5>
+          {this.props.title} ({this.props.year})
+        </h5>
+        <img src={this.props.imgURL} alt="movie image" />
         <p>Genre: {this.props.genres}</p>
         <p>Rating: {this.props.rating}</p>
-        <p>Number of Likes: {this.state.numberOfLikes}</p>
-        <button onClick={this.clickBtn}>Like it!</button>
+        <p>
+          Number of Likes: {this.state.numberOfLikes}
+          &nbsp;
+          <button onClick={this.clickBtn}>+1</button>
+        </p>
+
+        <button onClick={this.props.clickToDelete}>Delete</button>
       </section>
     );
   }

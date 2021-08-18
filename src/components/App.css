@@ -38,12 +38,18 @@
 } */
 
 .movie {
-  width: 60%;
-  margin: 1rem auto;
-  padding-bottom: 1rem;
+  /* width: 60%; */
+  margin: 2.5% auto;
+  padding: 1rem;
   border: 1px solid #bbb;
+  flex: 0 1 20%
 }
 
-.movie.movie-popular {
+/* .movie,.movie-popular {
   background-color: bisque;
+} */
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
 }
