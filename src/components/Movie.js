@@ -32,6 +32,9 @@ class Movie extends React.Component {
           {this.props.title} ({this.props.year})
         </h5>
         <img src={this.props.imgURL} alt="movie image" />
+        {this.props.rating>=6 &&
+        <p className='banner'>POPULAR</p>
+        }
         <p>Genre: {this.props.genres}</p>
         <p>Rating: {this.props.rating}</p>
         <p>

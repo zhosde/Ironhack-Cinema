@@ -40,6 +40,7 @@ class Main extends React.Component {
   render() {
     return (
       <main className="movie-container">
+        {this.state.moviesArr.length === 0 && <span>Currently no movies</span>}
         {this.state.moviesArr.map((movie) => {
           return (
             <Movie
