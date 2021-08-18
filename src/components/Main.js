@@ -9,13 +9,22 @@ class Main extends React.Component {
   };
 
   deleteMovieHandler = id => {
-    const moviesCopy = [...this.state.moviesArr];
-    const movieIndex = moviesCopy.findIndex(movie => movie.id ===id)
-    moviesCopy.splice(movieIndex, 1)
-    this.setState({
-      moviesArr: moviesCopy
+    const newMoviesArr = this.state.moviesArr.filter(movie => {
+      return movie.id !== id
     })
+    this.setState({
+      moviesArr: newMoviesArr
+    });
   }
+
+  // deleteMovieHandler = id => {
+  //   const moviesCopy = [...this.state.moviesArr];
+  //   const movieIndex = moviesCopy.findIndex(movie => movie.id ===id)
+  //   moviesCopy.splice(movieIndex, 1)
+  //   this.setState({
+  //     moviesArr: moviesCopy
+  //   })
+  // }
 
   // renderMovies = () => {
   //   return this.state.moviesArr.map(movie => {
