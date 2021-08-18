@@ -28,7 +28,10 @@ class Movie extends React.Component {
     return (
     //   <section className={'movie ' + classList}>
       <section className='movie' style={styleObj}>
-        <h5>{this.props.title}</h5>
+        <h5>{this.props.title} ({this.props.year})</h5>
+        <img src={this.props.imgURL} alt='movie image'/>
+        <p>Genre: {this.props.genres}</p>
+        <p>Rating: {this.props.rating}</p>
         <p>Number of Likes: {this.state.numberOfLikes}</p>
         <button onClick={this.clickBtn}>Like it!</button>
       </section>
