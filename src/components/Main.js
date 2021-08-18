@@ -9,13 +9,18 @@ class Main extends React.Component {
   };
 
   deleteMovieHandler = id => {
-    const newMoviesArr = this.state.moviesArr.filter(movie => {
-      return movie.id !== id
-    })
-    this.setState({
-      moviesArr: newMoviesArr
-    });
+    this.setState(prevState => {
+      return {moviesArr: prevState.moviesArr.filter (movie => movie.id !==id)}})
   }
+
+  // deleteMovieHandler = id => {
+  //   const newMoviesArr = this.state.moviesArr.filter(movie => {
+  //     return movie.id !== id
+  //   })
+  //   this.setState({
+  //     moviesArr: newMoviesArr
+  //   });
+  // }
 
   // deleteMovieHandler = id => {
   //   const moviesCopy = [...this.state.moviesArr];
