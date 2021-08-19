@@ -16,13 +16,12 @@ class Movie extends React.Component {
     });
   };
   render() {
-
     // let classList = this.state.numberOfLikes>=5 ? ' movie-popular' : ''
 
     // inline styling
     const styleObj = {
       color: "darkblue",
-      backgroundColor: this.state.numberOfLikes >=5 ? 'azure' : 'white'
+      backgroundColor: this.state.numberOfLikes >= 5 ? "azure" : "white",
     };
 
     return (
@@ -31,11 +30,9 @@ class Movie extends React.Component {
         <h5>
           {this.props.title} ({this.props.year})
         </h5>
-        <img src={this.props.imgURL} alt="movie image" />
-        {this.props.rating>=6 &&
-        <p className='banner'>POPULAR</p>
-        }
-        <p>Genre: {this.props.genres}</p>
+        <img src={this.props.imgUrl} alt="movie image" />
+        {this.props.rating >= 6 && <p className="banner">POPULAR</p>}
+        <p>Genre: {this.props.genre}</p>
         <p>Rating: {this.props.rating}</p>
         <p>
           Number of Likes: {this.state.numberOfLikes}
@@ -49,4 +46,4 @@ class Movie extends React.Component {
   }
 }
 
-export default Movie
+export default Movie;
