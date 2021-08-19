@@ -5,6 +5,7 @@
 label, input {
   display:block;
   margin: 5px auto;
+  min-width: 180px;
 }
 
 .movie-container {
