@@ -26,35 +26,44 @@ class AddMovie extends Component {
     });
   };
 
-  handleTitle = (event) => {
-    this.setState({
-      title: event.target.value,
-    });
-  };
+//   handleTitle = (event) => {
+//     this.setState({
+//       title: event.target.value,
+//     });
+//   };
 
-  handleYear = (event) => {
-    this.setState({
-      year: event.target.value,
-    });
-  };
+//   handleYear = (event) => {
+//     this.setState({
+//       year: event.target.value,
+//     });
+//   };
 
-  handleGenre = (event) => {
-    this.setState({
-      genre: event.target.value,
-    });
-  };
+//   handleGenre = (event) => {
+//     this.setState({
+//       genre: event.target.value,
+//     });
+//   };
 
-  handleRating = (event) => {
-    this.setState({
-      rating: event.target.value,
-    });
-  };
+//   handleRating = (event) => {
+//     this.setState({
+//       rating: event.target.value,
+//     });
+//   };
 
-  handleImage = (event) => {
-    this.setState({
-      imgUrl: event.target.value,
-    });
-  };
+//   handleImage = (event) => {
+//     this.setState({
+//       imgUrl: event.target.value,
+//     });
+//   };
+
+  handleChange(event) {
+    let { name, value, type } = event.target;
+    if (type === "checkbox") {
+      value = event.target.checked;
+    }
+    this.setState({ [name]: value });
+  }
+
 
   render() {
     return (
@@ -65,7 +74,7 @@ class AddMovie extends Component {
             type="text"
             name="title"
             value={this.state.title}
-            onChange={(e) => this.handleTitle(e)}
+            onChange={(e) => this.handleChange(e)}
           />
 
           <label>Year:</label>
@@ -73,7 +82,7 @@ class AddMovie extends Component {
             type="text"
             name="year"
             value={this.state.year}
-            onChange={(e) => this.handleYear(e)}
+            onChange={(e) => this.handleChange(e)}
           />
 
           <label>Genre:</label>
@@ -81,7 +90,7 @@ class AddMovie extends Component {
             type="text"
             name="genre"
             value={this.state.genre}
-            onChange={(e) => this.handleGenre(e)}
+            onChange={(e) => this.handleChange(e)}
           />
 
           <label>Rating:</label>
@@ -89,15 +98,15 @@ class AddMovie extends Component {
             type="text"
             name="rating"
             value={this.state.rating}
-            onChange={(e) => this.handleRating(e)}
+            onChange={(e) => this.handleChange(e)}
           />
 
           <label>Image:</label>
           <input
-            type="file"
+            type="text"
             name="imgUrl"
             value={this.state.imgUrl}
-            onChange={(e) => this.handleImage(e)}
+            onChange={(e) => this.handleChange(e)}
           />
 
           <button>Submit</button>
