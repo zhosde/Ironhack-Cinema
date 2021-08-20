@@ -24,3 +24,17 @@ label, input {
   font-weight: bold;
   padding: 5px 0;
 }
+
+.counter {
+  color: darkcyan;
+  font-weight: bolder;
+}
+
+#summary {
+  color: darkcyan;
+  font-weight: bolder;
+}
+
+#emptyBanner {
+  color: rebeccapurple
+}

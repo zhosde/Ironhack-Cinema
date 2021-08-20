@@ -8,19 +8,17 @@ class SearchBar extends Component {
     };
   }
 
-  handleSearch = async(event) => {
-   await this.setState({ searchWord:event.target.value });
-    this.props.findTheMovie(this.state.searchWord);
-    // this.setState({
-    //     searchWord:""
-    // })
+  handleSearch = (event) => {
+    this.setState({ searchWord:event.target.value }, () => {
+      this.props.findTheMovie(this.state.searchWord)
+    })
   }
-
+  
   render() {
     return (
       <div>
         <input
-          type="text"
+          type="search"
           name="searchWord"
           placeholder="Search..."
           value={this.state.searchWord}

@@ -14,8 +14,9 @@ class AddMovie extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    // Call the parent passed function
-    this.props.addTheMovie(this.state);
+    let {title, year, genre, rating, imgUrl} = this.state
+    rating=Number(rating)
+    this.props.addTheMovie({ title, year, genre, rating, imgUrl });
     // Reset
     this.setState({
       title: "",

@@ -30,7 +30,7 @@ class Movie extends React.Component {
         <h5>
           {this.props.title} ({this.props.year})
         </h5>
-        <img src={this.props.imgUrl} alt="movie image" />
+        <img src={this.props.imgUrl} alt='movie cover'/>
         {this.props.rating >= 6 && <p className="banner">POPULAR</p>}
         <p>Genre: {this.props.genre}</p>
         <p>Rating: {this.props.rating}</p>
@@ -40,7 +40,9 @@ class Movie extends React.Component {
           <button onClick={this.clickBtn}>+1</button>
         </p>
 
-        <button onClick={this.props.clickToDelete}>Delete</button>
+        <button onClick={() => {
+          this.props.clickToDelete(this.props.id);
+        }}>Delete</button>
       </section>
     );
   }
